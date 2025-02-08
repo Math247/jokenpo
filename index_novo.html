@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpô</title>
+
+    <style>
+        * { /*Aplica pra todo mundo*/
+            font-family: Helvetica Neue, Helvetica, Arial;
+            font-weight: 400;
+            cursor: default;
+        }
+        #principal {
+        }
+
+        #title {
+            text-align: center;
+            color: #2d3436;
+        }
+        #score {
+            display: flex; /* FLEXBOX: Tem o papel de deixar tudo sem consumir o espaço da div. ou seja, tudo dentro dela vai ficar alinhado*/
+            align-items: center; /* Deixa todo mundo no centro com essa combinação*/
+            justify-content: center;  /* Deixa todo mundo no centro com essa combinação*/
+        }
+        #player , #computer {
+            position: relative; /*Não vaza nada pra fora*/
+            flex-grow: 1; /* FLEXBOX: Tem o papel de fazer a div ocupar o espaço*/
+            height: 200px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        #player h2 , #computer h2 {
+            margin: 0;
+            padding: 0;
+        }
+        #player {
+            background-color: #ff7675;
+        }
+        #player-name, #computer-name{
+            font-size: 24px;
+        }
+
+        #computer-name {
+            text-align: right;
+        }
+
+        #player-score, #computer-score{
+            position: absolute;
+            top: 8px;
+            font-size: 52px;
+        }
+
+        #player-score {
+            right: 20px;
+        }
+
+        #player #player-choose, #computer #computer-choose {
+            list-style: none; /* Tira os pontinhos da lista*/
+            text-align: center;
+            margin: 30px 0 0;
+            padding: 0;
+        }
+
+        #player #player-choose li, #computer #computer-choose li{
+            display: inline;  /*Fala que agora vamos trabalhar na vertical*/
+            padding: 0 15px;
+        }
+
+        #player #player-choose a, #computer #computer-choose a{
+            opacity: .2; /*Fica como se tivesse apagada a imagem*/
+        }
+
+        #player #player-choose a:hover {
+            opacity: 1; /*Passa o mouse, da o efeito de acesso*/
+        }
+
+        #player #player-choose img, #computer #computer-choose img{
+            max-width: 80px; /*Trabalha a largura primeiro, que ja ajeita a altura*/
+        }
+
+        #versus {
+            font-size: 80px;
+            padding: 0 40px;
+        }
+
+        #computer {
+            background-color: #3498db;
+        }
+
+        #message {
+            background-color: #636e72;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="principal">
+        <h1 id="title">Pedra, Papel e Tesoura</h1>
+        <div id="score">
+            <div id="player">
+                <h2 id="player-name">Matheus</h2>
+                <span id="player-score">0</span>
+                <ul id="player-choose">
+                    <li><a id="player-choose-1"><img src="img/pedra.png"></a></li>
+                    <li><a id="player-choose-2"><img src="img/papel.png"></a></li>
+                    <li><a id="player-choose-3"><img src="img/tesoura.png"></a></li>
+                </ul>
+            </div>
+            <div id="versus">
+                <p>VS</p>
+            </div>
+            <div id="computer">
+                <h2 id="computer-name">Computer</h2>
+                <span id="computer-score">0</span>
+                <ul id="computer-choose">
+                    <li><a id="computer-choose-1"><img src="img/pedra.png"></a></li>
+                    <li><a id="computer-choose-2"><img src="img/papel.png"></a></li>
+                    <li><a id="computer-choose-3"><img src="img/tesoura.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="message">
+            mensagem
+        </div>
+    </div>
+</body>
+</html>
